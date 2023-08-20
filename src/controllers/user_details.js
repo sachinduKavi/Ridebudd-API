@@ -8,7 +8,6 @@ const getUserDetails = (req, res) => {
     const userEmail = req.params.userEmail;
     
     conn.query(`SELECT * FROM user_details WHERE userID='${userID}' OR user_email='${userEmail}'`, function(err, result, fields) {
-        if (err) throw err;
         res.status(200).json({
             data: result
         });
