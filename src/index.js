@@ -8,7 +8,7 @@ const userRouter = require('./routes/user_details');
 
 conn.connect(function(err) {
     if(err) console.log("Database Error");
-    console.log("Database Connected");
+    else console.log("Database Connected");
 })
 
 
