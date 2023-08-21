@@ -6,13 +6,20 @@ const conn = require('./db');
 
 const userRouter = require('./routes/user_details');
 
+const bannerRouter = require('./routes/banners');
+
+
+
 conn.connect(function(err) {
     if(err) console.log("Database Error");
     else console.log("Database Connected");
 });
 
 
+
 app.use('/userDetails', userRouter);
+
+app.use('/banners', bannerRouter);
 
 
 
