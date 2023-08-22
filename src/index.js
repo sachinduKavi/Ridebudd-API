@@ -8,6 +8,8 @@ const userRouter = require('./routes/user_details');
 
 const bannerRouter = require('./routes/banners');
 
+const vehicleRouter = require('./routes/vehicle');
+
 
 
 conn.connect(function(err) {
@@ -20,6 +22,8 @@ conn.connect(function(err) {
 app.use('/userDetails', userRouter);
 
 app.use('/banners', bannerRouter);
+
+app.use('/vehicle', vehicleRouter);
 
 
 
