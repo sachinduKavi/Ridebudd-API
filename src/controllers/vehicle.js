@@ -1,4 +1,4 @@
-const conn = require('mysql');
+const conn = require('../db');
 
 
 const insertVehicle = (req, res) => {
