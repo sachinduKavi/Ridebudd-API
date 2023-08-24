@@ -8,7 +8,7 @@ const getBanners = (req, res) => {
             data: result
         });
     });
-}
+};
 
 module.exports = {
     getBanners
