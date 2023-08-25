@@ -39,7 +39,7 @@ const newJourney = async (req, res) => {
     const sLatitudes = req.params.sLatitudes.replace("d", ".");
     const eLongitudes = req.params.eLongitudes.replace("d", ".");
     const eLatitudes = req.params.eLatitudes.replace("d", ".");
-    const description = req.params.description.replace('+', ' ');
+    const description = req.params.description.replaceAll('+', ' ');
 
     await Journey.insertMany(
         {
