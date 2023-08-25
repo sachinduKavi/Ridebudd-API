@@ -32,13 +32,13 @@ const Journey = mongoose.model('journey', {
 const newJourney = async (req, res) => {
     console.log("New JourneyFunction");
     const userID = req.params.userID;
-    const venue = req.params.venue;
+    const venue = req.params.venue.replace('s', ' ');
     const startingCity = req.params.startCity;
     const endCity = req.params.endCity;
-    const sLongitudes = req.params.sLongitudes;
-    const sLatitudes = req.params.sLatitudes;
-    const eLongitudes = req.params.eLongitudes;
-    const eLatitudes = req.params.eLatitudes;
+    const sLongitudes = req.params.sLongitudes.replace("s", ".");
+    const sLatitudes = req.params.sLatitudes.replace("s", ".");
+    const eLongitudes = req.params.eLongitudes.replace("s", ".");
+    const eLatitudes = req.params.eLatitudes.replace("s", ".");
     const description = req.params.description;
 
     await Journey.insertMany(
