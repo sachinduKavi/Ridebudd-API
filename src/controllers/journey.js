@@ -33,7 +33,6 @@ const Journey = mongoose.model('journey', {
 const newJourney = async (req, res) => {
     console.log("New JourneyFunction");
     const userID = req.params.userID;
-    const vehicleReg = req.params.vehicleReg;
     const venue = req.params.venue;
     const startingCity = req.params.startCity;
     const endCity = req.params.endCity;

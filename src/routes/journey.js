@@ -8,7 +8,7 @@ const {run, newJourney} = require('../controllers/journey');
 
 router.get('/journeyDetails', run);
 
-router.post('/newJourney/:userID/:vehicleReg/:venue/:startingCity/:endCity/:sLongitudes/:sLatitudes/:eLongitudes/:eLatitudes/:description', newJourney);
+router.post('/newJourney/:userID/:venue/:startingCity/:endCity/:sLongitudes/:sLatitudes/:eLongitudes/:eLatitudes/:description', newJourney);
 
 
 
