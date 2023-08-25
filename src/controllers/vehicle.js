@@ -36,7 +36,19 @@ const getVehicleData = (req, res) => {
     })
 }
 
+const insertVehicleDetails = (req, res) => {
+    console.log("Register New Vehicle");
+    console.log(req.body);
+    res.status(200).json({
+        
+        result: "This is Working",
+        request: req.body
+    })
+    
+}
+
 module.exports = {
     getVehicleData,
-    insertVehicle
+    insertVehicle,
+    insertVehicleDetails
 }
