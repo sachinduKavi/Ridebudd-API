@@ -16,9 +16,8 @@ const run = async (req, res) => {
     })
 }
 
-const Journey = mongoose.model('journey', {
+const Journey = mongoose.model('journey', {    
     userID: String,
-    vehicleReg: String,
     venue: String,
     startingCity: String,
     endCity: String,
@@ -45,7 +44,6 @@ const newJourney = async (req, res) => {
     await Journey.insertMany(
         {
             userID: userID,
-            vehicleReg: vehicleReg,
             venue: venue,
             startingCity: startingCity,
             endCity: endCity,
