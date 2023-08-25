@@ -6,7 +6,7 @@ const { insertVehicleDetails } = require('../controllers/vehicle');
 
 // router.get('/getVehicles', getVehicleData);
 
-router.post('/registerVehicle', insertVehicleDetails);
+router.post('/registerVehicle/:regNum/:owner/:image/:seats/:status/:chassisNum', insertVehicleDetails);
 
 
 module.exports = router;

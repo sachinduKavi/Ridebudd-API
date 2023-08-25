@@ -37,12 +37,15 @@ const getVehicleData = (req, res) => {
 }
 
 const insertVehicleDetails = (req, res) => {
+    const regNum = req.params.regNum;
+    const owner = req.params.owner;
+    const image = req.params.image;
+    const seats = req.params.seats;
+    const status = req.params.status;
+    const chassisNum = req.params.chassisNum;
     console.log("Register New Vehicle");
-    console.log(req.body);
-    res.status(200).json({
-        
-        result: "This is Working",
-        request: req.body
+    res.status(201).json({
+        result: "This is Working"
     })
     
 }
