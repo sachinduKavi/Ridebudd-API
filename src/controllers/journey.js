@@ -55,7 +55,7 @@ const newJourney = async (req, res) => {
     const eLatitudes = req.params.eLatitudes.replace("d", ".");
     const description = req.params.description.replaceAll('+', ' ');
 
-    const time = getLocalTime();
+    const timeNow = getLocalTime();
 
     await Journey.insertMany(
         {
@@ -68,7 +68,7 @@ const newJourney = async (req, res) => {
             eLongitudes: eLongitudes,
             eLatitudes: eLatitudes,
             description: description,
-            postedOn: time,
+            postedOn: timeNow,
             status: "Pending"
         }
     ).then(success => {
