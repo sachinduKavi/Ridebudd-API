@@ -48,7 +48,7 @@ const newJourney = async (req, res) => {
     console.log("New JourneyFunction");
     const userID = req.params.userID;
     const venue = req.params.venue.replace('s', ':').replace('+', ' ');
-    const startingCity = req.params.startCity;
+    const startingCity = req.params.startingCity;
     const endCity = req.params.endCity;
     const sLongitudes = req.params.sLongitudes.replace("d", ".");
     const sLatitudes = req.params.sLatitudes.replace("d", ".");
