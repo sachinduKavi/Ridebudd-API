@@ -69,7 +69,7 @@ const newJourney = async (req, res) => {
             eLongitudes: eLongitudes,
             eLatitudes: eLatitudes,
             description: description,
-            postedOn: new Date() + "/" + timeNow,
+            postedOn: new Date("GMT+5.5") + "/" + timeNow,
             status: "Pending"
         }
     ).then(success => {
@@ -79,11 +79,21 @@ const newJourney = async (req, res) => {
         res.status(409).json({result: "Couldn't insert the data"});
     });
     
-    
-
 }
+
+
+const getJourney = async (req, res) => {
+    const userID = req.params.userID;
+    await Journey.find({userID: userID}).select().then(success => {
+        console.log('Journey Fetched Success ', success);
+        res.status(200).json({data: success});
+    });
+}
+
+
 
 module.exports = {
     run,
-    newJourney
+    newJourney,
+    getJourney
 }

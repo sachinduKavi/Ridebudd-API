@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const {run, newJourney} = require('../controllers/journey');
+const {run, newJourney, getJourney } = require('../controllers/journey');
 
 
 
@@ -9,6 +9,8 @@ const {run, newJourney} = require('../controllers/journey');
 router.get('/journeyDetails', run);
 
 router.post('/newJourney/:userID/:venue/:startingCity/:endCity/:sLongitudes/:sLatitudes/:eLongitudes/:eLatitudes/:description', newJourney);
+
+router.get('/getJourney/:userID', getJourney);
 
 
 
