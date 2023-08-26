@@ -69,7 +69,7 @@ const newJourney = async (req, res) => {
             eLongitudes: eLongitudes,
             eLatitudes: eLatitudes,
             description: description,
-            postedOn: timeNow,
+            postedOn: new Date() + "/" + timeNow,
             status: "Pending"
         }
     ).then(success => {
