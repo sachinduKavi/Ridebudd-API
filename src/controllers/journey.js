@@ -40,6 +40,7 @@ const Journey = mongoose.model('journey', {
     eLongitudes: Number,
     eLatitudes: Number,
     description: String,
+    postedOn: String,
     status: String
 }, "journey");
 
