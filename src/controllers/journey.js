@@ -2,6 +2,20 @@ const mongoose = require('../mongoDB');
 
 // Show the data in employee
 
+function getLocalTime() {
+    const sriLankaOffset = 5.5; // Sri Lanka is UTC+5:30
+    const now = new Date();
+    const utcTime = now.getTime() + now.getTimezoneOffset() * 60000;
+    const localTime = new Date(utcTime + sriLankaOffset * 3600000);
+  
+    const hours = localTime.getUTCHours();
+    const minutes = localTime.getUTCMinutes();
+    const seconds = localTime.getUTCSeconds();
+  
+    const formattedTime = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+    return formattedTime;
+  }
+
 const Model = mongoose.model('NewCollection', {
     name: String,
     age: Number
@@ -41,6 +55,8 @@ const newJourney = async (req, res) => {
     const eLatitudes = req.params.eLatitudes.replace("d", ".");
     const description = req.params.description.replaceAll('+', ' ');
 
+    const time = getLocalTime();
+
     await Journey.insertMany(
         {
             userID: userID,
@@ -52,6 +68,7 @@ const newJourney = async (req, res) => {
             eLongitudes: eLongitudes,
             eLatitudes: eLatitudes,
             description: description,
+            postedOn: time,
             status: "Pending"
         }
     ).then(success => {
