@@ -50,10 +50,10 @@ const newJourney = async (req, res) => {
     const venue = req.params.venue.replace('s', ':').replace('+', ' ');
     const startingCity = req.params.startingCity;
     const endCity = req.params.endCity;
-    const sLongitudes = req.params.sLongitudes.replace("d", ".");
-    const sLatitudes = req.params.sLatitudes.replace("d", ".");
-    const eLongitudes = req.params.eLongitudes.replace("d", ".");
-    const eLatitudes = req.params.eLatitudes.replace("d", ".");
+    const sLongitudes = req.params.sLongitudes.replace("*", ".");
+    const sLatitudes = req.params.sLatitudes.replace("*", ".");
+    const eLongitudes = req.params.eLongitudes.replace("*", ".");
+    const eLatitudes = req.params.eLatitudes.replace("*", ".");
     const description = req.params.description.replaceAll('+', ' ');
 
     const timeNow = getLocalTime();

@@ -18,7 +18,7 @@ const newUser = (req, res) => {
     console.log("New User");
     const fName = req.params.fName;
     const lName = req.params.LName;
-    const userEmail = req.params.userEmail;
+    const userEmail = req.params.userEmail.replace("*", ".");
     const password = req.params.pass;
     const mobileNumber = req.params.mobile;
     //  Fetching last userID from database
