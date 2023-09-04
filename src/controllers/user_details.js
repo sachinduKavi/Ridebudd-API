@@ -27,8 +27,10 @@ const newUser = (req, res) => {
         var userNewID = "UA" + (parseInt(result[0]["userID"].substring(2)) + 1).toString().padStart(6, '0');
         console.log("New UserID " ,userNewID);
 
-        conn.query(`INSERT INTO user_details(userID, f_name, l_name, user_email, password, mobileNumber, dp_image) VALUES('${userNewID}', '${fName}','${lName}','${userEmail}','${password}','${mobileNumber}',
-        'default')`, function(err, result, fields) {
+        conn.query(`INSERT INTO user_details(userID, f_name, l_name, user_email, password, mobileNumber, dp_image, rating, gender) VALUES('${userNewID}', '${fName}','${lName}','${userEmail}','${password}','${mobileNumber}',
+        'default',
+        '20',
+        '1')`, function(err, result, fields) {
             if(err) throw err;
             res.status(201).json({
                 message: "Record Created",
